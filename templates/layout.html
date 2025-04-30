@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <nav id="nav-bar">
+            <ul id="items-bar">
+                <a href="{{ url_for('peliculas') }}">Películas</a>
+                <a href="{{ url_for('index') }}">Inicio</a>
+                <a href="{{ url_for('series') }}">Series</a>
+            </ul>
+            <input id="search-input" type="text" placeholder="Buscar..." autocomplete="off" aria-label="Search field">
+            <form method="get" action="">
+                <input type="text" name="categoria" placeholder="Filtrar por categoría">
+                <button type="submit">Filtrar</button>
+            </form>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

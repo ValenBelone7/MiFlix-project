@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+{% for movie in data %}
+<section class="card-movies">
+    <img class="img-movie" src="{{ movie.imagen }}" alt="{{ movie.imagen }}">
+    <h2 class="movie-title">{{ movie.titulo }}</h2>
+    <h4 class="movie-desc">{{ movie.descripcion }}</h4>
+</section>
+{% endfor %}
+{% endblock %}

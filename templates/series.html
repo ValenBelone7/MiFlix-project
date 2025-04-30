@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}Series{% endblock %}
+{% block content %}
+{% for serie in series %}
+<section class="card-movies">
+    <img class="img-movie" src="{{ serie.imagen }}" alt="{{ serie.imagen }}">
+    <h2 class="movie-title">{{ serie.titulo }}</h2>
+    <h4 class="movie-desc">{{ serie.descripcion }}</h4>
+</section>
+{% endfor %}
+{% endblock %}
