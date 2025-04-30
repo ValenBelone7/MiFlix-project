@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Agregar{% endblock %}
+
+{% block content %}
+<form action="/agregar" method="POST">
+    <input type="text" name="titulo" placeholder="Título" required><br>
+    <textarea name="descripcion" placeholder="Descripción" required></textarea><br>
+    <input type="text" name="imagen" placeholder="Imagen (ej: matrix-portada.jpg)" required><br>
+    <input type="text" name="categoria" placeholder="Categoría (ej: Drama)" required><br>
+    <select name="tipo" required>
+      <option value="Pelicula">Pelicula</option>
+      <option value="Serie">Serie</option>
+    </select><br>
+    <button type="submit">Agregar</button>
+  </form>  
+{% endblock %}

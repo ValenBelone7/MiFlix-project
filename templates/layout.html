@@ -11,9 +11,10 @@
     <header>
         <nav id="nav-bar">
             <ul id="items-bar">
-                <a href="{{ url_for('peliculas') }}">Películas</a>
                 <a href="{{ url_for('index') }}">Inicio</a>
+                <a href="{{ url_for('peliculas') }}">Películas</a>
                 <a href="{{ url_for('series') }}">Series</a>
+                <a href="{{ url_for('agregar') }}">Agregar Película/Serie</a>
             </ul>
             <input id="search-input" type="text" placeholder="Buscar..." autocomplete="off" aria-label="Search field">
             <form method="get" action="">

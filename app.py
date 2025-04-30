@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import json
 
 app = Flask(__name__)
@@ -18,21 +18,41 @@ def dividir():
             series.append(item)  
     return peliculas, series
 
+def filtrar_por_categoria(lista, categoria):
+    if not categoria:
+        return lista
+
+    lista_filtrada = []
+    for item in lista:
+        if 'categorias' in item:
+            if categoria in item['categorias']:
+                lista_filtrada.append(item)
+    return lista_filtrada
+
+def guardarMovies(data):
+    with open("data/biblioteca.json", "w", encoding="utf-8") as archivo:
+        json.dump(data, archivo, ensure_ascii=False, indent=4)
+
+def obtener_nuevo_id():
+    data = cargarMovies()
+
+    if not data:
+        return 1
+
+    max_id = data[0]["id"]
+    for item in data:
+        if item["id"] > max_id:
+            max_id = item["id"]
+
+    return max_id + 1
+
 @app.route("/")
 def index():
     data = cargarMovies()
     categoria_filtrada = request.args.get('categoria')
-
-    if categoria_filtrada:
-        data_filtrada = []
-        for item in data:
-            if 'categorias' in item:
-                if categoria_filtrada in item['categorias']:
-                    data_filtrada.append(item)
-        data = data_filtrada
+    data = filtrar_por_categoria(data, categoria_filtrada)
 
     return render_template("index.html", data=data)
-
 
 @app.route("/login")
 def login():
@@ -40,39 +60,38 @@ def login():
 
 @app.route("/peliculas")
 def peliculas():
-    datos = dividir()
-    peliculas = datos[0]
-
+    peliculas, _ = dividir()
     categoria_filtrada = request.args.get('categoria')
-
-    if categoria_filtrada:
-        peliculas_filtradas = []
-        for pelicula in peliculas:
-            if 'categorias' in pelicula:
-                if categoria_filtrada in pelicula['categorias']:
-                    peliculas_filtradas.append(pelicula)
-        peliculas = peliculas_filtradas
+    peliculas = filtrar_por_categoria(peliculas, categoria_filtrada)
 
     return render_template("peliculas.html", peliculas=peliculas)
 
-
 @app.route("/series")
 def series():
-    datos = dividir()
-    series = datos[1]
-
+    _, series = dividir()
     categoria_filtrada = request.args.get('categoria')
-
-    if categoria_filtrada:
-        series_filtradas = []
-        for serie in series:
-            if 'categorias' in serie:
-                if categoria_filtrada in serie['categorias']:
-                    series_filtradas.append(serie)
-        series = series_filtradas
+    series = filtrar_por_categoria(series, categoria_filtrada)
 
     return render_template("series.html", series=series)
 
+@app.route("/agregar", methods=["GET", "POST"])
+def agregar():
+    if request.method == "POST":
+        nueva_entrada = {
+            "id": obtener_nuevo_id(),
+            "titulo": request.form["titulo"],
+            "descripcion": request.form["descripcion"],
+            "imagen": request.form["imagen"],
+            "categoria": request.form["categoria"],
+            "tipo": request.form["tipo"]
+        }
+
+        data = cargarMovies()
+        data.append(nueva_entrada)
+        guardarMovies(data)
+
+        return redirect("/")
+    return render_template("agregar.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
