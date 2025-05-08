@@ -5,7 +5,7 @@
 {% block content %}
 {% for pelicula in peliculas %}
 <section class="card-movies">
-    <img class="img-movie" src="{{ pelicula.imagen }}" alt="{{ pelicula.imagen }}">
+    <img src="{{ url_for('static', filename='img/' + pelicula.imagen) }}" alt="{{ pelicula.titulo }}">
     <h2 class="movie-title">{{ pelicula.titulo }}</h2>
     <h4 class="movie-desc">{{ pelicula.descripcion }}</h4>
 </section>

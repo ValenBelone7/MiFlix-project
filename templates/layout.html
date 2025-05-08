@@ -14,7 +14,15 @@
                 <a href="{{ url_for('index') }}">Inicio</a>
                 <a href="{{ url_for('peliculas') }}">Películas</a>
                 <a href="{{ url_for('series') }}">Series</a>
-                <a href="{{ url_for('agregar') }}">Agregar Película/Serie</a>
+                {% if session.get('rol') == 'admin' %}
+                <a href="{{ url_for('agregar') }}">Agregar</a>
+                {% endif %}
+                {% if session.get('usuario') %}
+                <span>Hola, {{ session['usuario'] }}</span>
+                <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+                {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
             </ul>
             <input id="search-input" type="text" placeholder="Buscar..." autocomplete="off" aria-label="Search field">
             <form method="get" action="">

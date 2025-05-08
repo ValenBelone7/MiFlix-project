@@ -1,67 +1,106 @@
 [
     {
-      "id": 1,
-      "titulo": "Interstellar",
-      "descripcion": "Un viaje interestelar en busca de un nuevo hogar.",
-      "imagen": "interstellar-portada.jpg",
-      "categorias": ["Suspenso", "Ciencia Ficción", "Drama"],
-      "tipo": "Pelicula"
+        "id": 1,
+        "titulo": "Interstellar",
+        "descripcion": "Un viaje interestelar en busca de un nuevo hogar.",
+        "imagen": "interstellar-portada.jpg",
+        "categorias": [
+            "Suspenso",
+            "Ciencia Ficción",
+            "Drama"
+        ],
+        "tipo": "Pelicula"
     },
     {
-      "id": 2,
-      "titulo": "The Batman",
-      "descripcion": "Gotham necesita un nuevo héroe.",
-      "imagen": "batman-portada.jpg",
-      "categorias": ["Super Heroes", "Acción", "Misterio"],
-      "tipo": "Pelicula"
+        "id": 2,
+        "titulo": "The Batman",
+        "descripcion": "Gotham necesita un nuevo héroe.",
+        "imagen": "batman-portada.jpg",
+        "categorias": [
+            "Super Heroes",
+            "Acción",
+            "Misterio"
+        ],
+        "tipo": "Pelicula"
     },
     {
-      "id": 3,
-      "titulo": "Matrix",
-      "descripcion": "Una película de ciencia ficción",
-      "imagen": "matrix-portada.jpg",
-      "categorias": ["Acción", "Ciencia Ficción", "Distopía"],
-      "tipo": "Pelicula"
+        "id": 3,
+        "titulo": "Matrix",
+        "descripcion": "Una película de ciencia ficción",
+        "imagen": "matrix-portada.jpg",
+        "categorias": [
+            "Acción",
+            "Ciencia Ficción",
+            "Distopía"
+        ],
+        "tipo": "Pelicula"
     },
     {
-      "id": 4,
-      "titulo": "Breaking Bad",
-      "descripcion": "Amor por su familia y por la química montando un laboratorio de metanfetaminas.",
-      "imagen": "breaking_bad-portada.jpg",
-      "categorias": ["Drama", "Crimen", "Suspenso"],
-      "tipo": "Serie"
+        "id": 4,
+        "titulo": "Breaking Bad",
+        "descripcion": "Amor por su familia y por la química montando un laboratorio de metanfetaminas.",
+        "imagen": "breaking_bad-portada.jpg",
+        "categorias": [
+            "Drama",
+            "Crimen",
+            "Suspenso"
+        ],
+        "tipo": "Serie"
     },
     {
-      "id": 5,
-      "titulo": "Game of Thrones",
-      "descripcion": "La lucha por los reinar en el trono de hierro.",
-      "imagen": "got-portada.jpg",
-      "categorias": ["Fantasía", "Drama", "Acción"],
-      "tipo": "Serie"
+        "id": 5,
+        "titulo": "Game of Thrones",
+        "descripcion": "La lucha por los reinar en el trono de hierro.",
+        "imagen": "got-portada.jpg",
+        "categorias": [
+            "Fantasía",
+            "Drama",
+            "Acción"
+        ],
+        "tipo": "Serie"
     },
     {
-      "id": 6,
-      "titulo": "The Sopranos",
-      "descripcion": "Capo de la mafia es un hombre de familia que no confía en nadie más que en su psiquiatra.",
-      "imagen": "sopranos-portada.jpg",
-      "categorias": ["Drama", "Crimen", "Psicológico"],
-      "tipo": "Serie"
+        "id": 6,
+        "titulo": "The Sopranos",
+        "descripcion": "Capo de la mafia es un hombre de familia que no confía en nadie más que en su psiquiatra.",
+        "imagen": "sopranos-portada.jpg",
+        "categorias": [
+            "Drama",
+            "Crimen",
+            "Psicológico"
+        ],
+        "tipo": "Serie"
     },
     {
-      "id": 7,
-      "titulo": "The Simpson",
-      "descripcion": "La familia Simpson se ha ganado el estatus de familia más alocada de la televisión y sus miembros principales son buena causa de ello.",
-      "imagen": "simpson-portada.jpg",
-      "categorias": ["Animación", "Comedia", "Familiar"],
-      "tipo": "Serie"
+        "id": 7,
+        "titulo": "The Simpson",
+        "descripcion": "La familia Simpson se ha ganado el estatus de familia más alocada de la televisión y sus miembros principales son buena causa de ello.",
+        "imagen": "simpson-portada.jpg",
+        "categorias": [
+            "Animación",
+            "Comedia",
+            "Familiar"
+        ],
+        "tipo": "Serie"
     },
     {
-      "id": 8,
-      "titulo": "The Lion King",
-      "descripcion": "El pequeño león Simba, tendrá que aprender el valor de la amistad, de las cosas buenas de la vida y también de la crueldad que encierra la naturaleza y la vileza de algunos seres.",
-      "imagen": "lion-portada.jpg",
-      "categorias": ["Animación", "Aventura", "Familiar"],
-      "tipo": "Pelicula"
+        "id": 8,
+        "titulo": "The Lion King",
+        "descripcion": "El pequeño león Simba, tendrá que aprender el valor de la amistad, de las cosas buenas de la vida y también de la crueldad que encierra la naturaleza y la vileza de algunos seres.",
+        "imagen": "lion-portada.jpg",
+        "categorias": [
+            "Animación",
+            "Aventura",
+            "Familiar"
+        ],
+        "tipo": "Pelicula"
+    },
+    {
+        "id": 9,
+        "titulo": "El Eternauta",
+        "descripcion": "Mundo apocaliptico en Argentina",
+        "imagen": "https://pics.filmaffinity.com/el_eternauta-564337864-large.jpg",
+        "categoria": "Ficcion",
+        "tipo": "Serie"
     }
-  ]
-  
+]
