@@ -1,0 +1,243 @@
+/* ===============================
+   Variables de color y espaciado
+   =============================== */
+:root {
+  --color-bg: #121212;
+  --color-card: #1e1e1e;
+  --color-text: #ffffff;
+  --color-accent: #00adb5;
+  --color-border: #333333;
+  --color-nav: #191919;
+  --color-input-bg: #2c2c2c;
+  --color-placeholder: #bbbbbb;
+  --border-radius: 10px;
+  --spacing: 16px;
+  --card-width: 220px;
+}
+
+/* ============
+   Reset simple
+   ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding-bottom: 50px;
+}
+
+/* ===================
+   Navegación principal
+   =================== */
+header {
+  background-color: var(--color-nav);
+  padding: var(--spacing);
+  border-bottom: 1px solid var(--color-border);
+}
+
+#nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+
+/* Menú de enlaces */
+#items-bar {
+  display: flex;
+  gap: var(--spacing);
+  align-items: center;
+}
+
+#items-bar a, #items-bar span {
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 6px 10px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#items-bar a:hover {
+  background-color: var(--color-accent);
+  color: #000;
+}
+
+/* ================
+   Inputs del nav
+   ================ */
+#search-input,
+#nav-bar form input[type="text"] {
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin-left: var(--spacing);
+}
+
+#search-input::placeholder,
+#nav-bar form input::placeholder {
+  color: var(--color-placeholder);
+}
+
+#nav-bar form button {
+  background-color: var(--color-accent);
+  border: none;
+  color: black;
+  padding: 6px 10px;
+  margin-left: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+#nav-bar form button:hover {
+  opacity: 0.8;
+}
+
+/* ====================
+   Contenido principal
+   ==================== */
+main {
+  padding: var(--spacing);
+}
+
+/* Mensajes generales */
+.message {
+  background-color: #2e7d32;
+  color: white;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin: 20px auto;
+  text-align: center;
+  width: fit-content;
+}
+
+/* ======================
+   Tarjetas de películas
+   ====================== */
+/* Contenedor de las tarjetas */
+.card-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;  /* Para centrar las tarjetas y separarlas adecuadamente */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.card-movies img {
+    width: 100%;  /* Para que las imágenes se ajusten al tamaño de la tarjeta */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para los títulos de las películas y series */
+.movie-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Estilo para las descripciones */
+.movie-desc {
+    font-size: 1rem;
+    text-align: center;
+    color: #ccc;
+}
+
+/* Tarjeta individual */
+.card-movies {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    text-align: center;
+    overflow: hidden;  /* Asegura que nada se salga de la tarjeta */
+}
+
+/* Efecto de hover para las tarjetas */
+.card-movies:hover {
+    transform: scale(1.05);  /* Amplía un poco la tarjeta cuando se pasa el mouse */
+}
+
+/* Asegura que las imágenes dentro de las tarjetas no se deformen */
+.card-movies img {
+    object-fit: cover;
+    height: 200px;  /* Ajusta la altura de las imágenes */
+    width: 100%;  /* Asegura que la imagen no se deforme */
+}
+
+/* Estilo adicional para los contenedores */
+.card-movies {
+    margin-bottom: 20px;
+}
+
+/* =====================
+   Formularios (login/agregar)
+   ===================== */
+.login-box {
+  background-color: var(--color-card);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  width: 350px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px #00000060;
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-box input,
+.login-box textarea,
+.login-box select {
+  background-color: var(--color-input-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 10px;
+  border-radius: 5px;
+  resize: none;
+}
+
+.login-box button {
+  background-color: var(--color-accent);
+  border: none;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.login-box button:hover {
+  opacity: 0.85;
+}
+
+/* ==========
+   Footer vacío
+   ========== */
+footer {
+  text-align: center;
+  padding: var(--spacing);
+  color: #777;
+}
